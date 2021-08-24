@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
     server.vm.network :private_network, ip: "10.0.0.10"
 
     server.vm.provider :virtualbox do |vb|
-     vb.memory = 1024 
+     vb.memory = 1024
      vb.cpus = 1
     end
     server.vm.provision "shell", path: "enabling_ssh_passauth.sh"
@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
         server.vm.provision :shell do |shell|
           shell.privileged = true
           shell.inline = 'echo rebooting'
-          shell.reboot = truesdsd
+          shell.reboot = true
    end
   end
   config.vm.define "client" do |client|
